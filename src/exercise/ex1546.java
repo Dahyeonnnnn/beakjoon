@@ -27,7 +27,7 @@ public class ex1546 {
 		double sum=0;
 		
 		for(int i=0;i<a;i++) {
-			sum=arr[i]/arr[arr.length-1]*100;
+			sum+=arr[i]/arr[arr.length-1]*100;
 		
 		}
 		double result=sum/a;
