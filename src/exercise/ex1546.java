@@ -9,29 +9,27 @@ public class ex1546 {
 		// TODO Auto-generated method stub
 
 		Scanner scanner = new Scanner(System.in);
-		
+
 		int a = scanner.nextInt();
-		
-		int[] arr= new int[a];
-		
-		for(int i=0;i<a;i++) {
-			
-			
+
+		double[] arr = new double[a];
+
+		for (int i = 0; i < a; i++) {
+
 			arr[i] = scanner.nextInt();
-			
-			
+
 		}
+
+		double sum = 0;
+
 		Arrays.sort(arr);
-		
-		
-		double sum=0;
-		
-		for(int i=0;i<a;i++) {
-			sum+=arr[i]/arr[arr.length-1]*100;
-		
+
+		for (int i = 0; i < a; i++) {
+			sum += (arr[i] / arr[arr.length - 1]) * 100;
+
 		}
-		double result=sum/a;
-		
+		double result = sum / a;
+
 		System.out.println(result);
 	}
 
