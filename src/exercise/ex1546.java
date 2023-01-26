@@ -28,6 +28,17 @@ public class ex1546 {
 			sum += (arr[i] / arr[arr.length - 1]) * 100;
 
 		}
+		
+//		따로 max값 비교해서 넣는 방법
+//		int max=0;
+//		for(int i=0; i<a; i++) {
+//            arr[i] = sc.nextInt();
+//            if(arr[i] > max) {
+//                max = arr[i];
+//            }
+//            sum += arr[i];
+//        }
+		
 		double result = sum / a;
 
 		System.out.println(result);
