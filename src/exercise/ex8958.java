@@ -19,7 +19,7 @@ public class ex8958 {
 			int num = 0;
 
 			for (int j = 0; j < ox[i].length(); j++) {	//내부 순환
-				if (ox[i].charAt(j) == 'O') {	//charAt
+				if (ox[i].charAt(j) == 'O') {	//charAt으로 내부 값 검사
 					num++;
 					sum += num;
 				} else {
