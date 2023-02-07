@@ -1,6 +1,7 @@
 package exercise;
 
 import java.util.Scanner;
+import java.util.StringTokenizer;
 
 public class ex1152 {
 
@@ -9,26 +10,11 @@ public class ex1152 {
 
 		Scanner scanner = new Scanner(System.in);
 		
-
-		int[] arr = new int[26];
-		String a = scanner.next();
+		String a = scanner.nextLine();
 		
-		for (int i = 0; i < a.length(); i++) {
-			if ('A' <= a.charAt(i) && a.charAt(i) < 'Z') { // 대문자 범위
-				arr[a.charAt(i) - 'A']++;
-			} else { // 소문자 범위
-				arr[a.charAt(i) - 'a']++;
-			}
-		}
+		StringTokenizer st = new StringTokenizer(a," ");
 		
-		int sum=0;
-		
-		for(int i=0;i<a.length();i++) {
-			if(arr[i]>0) {
-				sum++;
-			}
-		}
-		System.out.println(sum);
+		System.out.println(st.countTokens());
 	}
 
 }
