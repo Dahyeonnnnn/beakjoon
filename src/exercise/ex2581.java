@@ -39,7 +39,8 @@ public class ex2581 {
 			System.out.println(-1);
 			
 		}else {
-			System.out.println(sum + "\n" + min);
+			System.out.println(sum);
+            System.out.println(min);
 
 		}
 	}
