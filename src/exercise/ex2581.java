@@ -16,7 +16,7 @@ public class ex2581 {
 
 		int min = n;
 
-		for (int i = m; i < n; i++) {
+		for (int i = m; i <= n; i++) {
 			boolean isPrime = true;
 			if (i == 1) { // 1은 소수가 아님
 				continue;
