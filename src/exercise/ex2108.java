@@ -54,7 +54,7 @@ public class ex2108 {
 
 		}
 
-		System.out.println(sum / n);
+		System.out.println((int)Math.round((double)sum / n));
 		System.out.println(arr[n / 2]);
 		System.out.println(mode);
 		System.out.println(arr[n - 1] - arr[0]);
