@@ -10,23 +10,17 @@ public class ex2108 {
 	public static void main(String[] args) throws IOException {
 		// TODO Auto-generated method stub
 
-		/*
-		 * sum = 총 합계 max = 최댓값 min = 최솟값 median = 중앙값 mode = 최빈값
-		 */
 		int sum = 0;
-		int max = Integer.MIN_VALUE;
-		int min = Integer.MAX_VALUE;
-		// median 과 mode 는 -4000~4000 을 제외한 수로 초기화하면 된다.
-		int median = 10000;
+
 		int mode = 10000;
 
-		int count=0;
+		int count = 1;
+
 		boolean flag = false;
 		int mode_max = 0;
-		int jump = 0;	// 동일한 수가 나온만큼 i 값 jump 시킬 변수 
-		
+		int jump = 0; // 동일한 수가 나온만큼 i 값 jump 시킬 변수
+
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-		StringBuilder sb = new StringBuilder();
 
 		int n = Integer.parseInt(br.readLine());
 		int[] arr = new int[n];
@@ -34,27 +28,31 @@ public class ex2108 {
 		for (int i = 0; i < n; i++) {
 			arr[i] = Integer.parseInt(br.readLine());
 			sum += arr[i];
-			
-			if(arr[i]==arr[i-1]) {
+
+		}
+		Arrays.sort(arr);
+
+		for (int i = 0; i < n; i++) {
+			for (int j = i+1; j < n; j++) {
+				if (arr[i] != arr[j]) {
+					break;
+				}
 				count++;
+				jump++;
 			}
-			
-			if(count > mode_max) {
+
+			if (count > mode_max) {
 				mode_max = count;
 				mode = arr[i];
 				flag = true;
-			}
-			else if(count == mode_max && flag == true) {
+			} else if (count == mode_max && flag == true) {
 				mode = arr[i];
 				flag = false;
 			}
-			
-			i += jump;
-			
-		}
 
-		Arrays.sort(arr);
-		
+			i += jump;
+
+		}
 
 		System.out.println(sum / n);
 		System.out.println(arr[n / 2]);
