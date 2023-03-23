@@ -1,5 +1,7 @@
 package algorithm;
 
+import java.util.Scanner;
+
 public class ex1926 {
 
 	public static void main(String[] args) {
@@ -20,7 +22,52 @@ public class ex1926 {
 //		방문 : bool[][]
 //		Queue(BFS)
 		
+		Scanner scanner=new Scanner(System.in);
 		
+		int n = scanner.nextInt();
+		int m = scanner.nextInt();
+		
+		int[][] arr = new int[n][m];
+		
+		int count=0;
+		int max=0;
+		boolean[][] chk=new boolean[n][m];
+		
+		for(int i=0;i<n;i++) {
+			for(int j=0;j<m;j++) {
+				if(arr[i][j]==1 &&chk[i][j]==false) {
+					chk[i][j]=true;
+					//전체그림갯수+1
+					count++;
+					//BFS>그림 크기를 구해주고
+					//최댓값 갱신
+					max=bfs(i,j);
+				}
+			}
+		}
+		System.out.println();
+		
+	}
+	
+	public int bfs(int i, int j) {
+		int rs=1;
+		int[] dx = new int[]{1, 0, -1, 0};
+        int[] dy = new int[]{0, 1, 0, -1};
+		
+        for(int k=0;k<4;k++) {
+        	int nx= i+dx[k];
+        	int ny= j+dx[k];
+        	
+        	if(nx<0&&ny<0&&nx>=n&&ny>=m) {
+        		if(chk[nx][ny]==false&&arr[nx][ny]==1) {
+        			rs++;
+        			chk[nx][ny]=true;
+        		}
+        		
+        	}
+        }
+        
+		return rs;
 	}
 
 }
