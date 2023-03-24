@@ -3,6 +3,12 @@ package algorithm;
 import java.util.Scanner;
 
 public class ex1926 {
+	
+	static int[][] arr;
+	
+	static int count=0;
+	static int max=0;
+	static boolean[][] chk;
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -27,11 +33,8 @@ public class ex1926 {
 		int n = scanner.nextInt();
 		int m = scanner.nextInt();
 		
-		int[][] arr = new int[n][m];
-		
-		int count=0;
-		int max=0;
-		boolean[][] chk=new boolean[n][m];
+		arr = new int[n][m];
+        chk = new boolean[n][m];
 		
 		for(int i=0;i<n;i++) {
 			for(int j=0;j<m;j++) {
@@ -45,20 +48,22 @@ public class ex1926 {
 				}
 			}
 		}
-		System.out.println();
+		System.out.println(count);
+		System.out.println(max);
 		
 	}
 	
-	public int bfs(int i, int j) {
+	static int[] dx = new int[]{1, 0, -1, 0};
+	static int[] dy = new int[]{0, 1, 0, -1};
+	
+	public static int bfs(int i, int j) {
 		int rs=1;
-		int[] dx = new int[]{1, 0, -1, 0};
-        int[] dy = new int[]{0, 1, 0, -1};
 		
         for(int k=0;k<4;k++) {
         	int nx= i+dx[k];
         	int ny= j+dx[k];
         	
-        	if(nx<0&&ny<0&&nx>=n&&ny>=m) {
+        	if(nx<0&&ny<0&&nx>=i&&ny>=j) {
         		if(chk[nx][ny]==false&&arr[nx][ny]==1) {
         			rs++;
         			chk[nx][ny]=true;
