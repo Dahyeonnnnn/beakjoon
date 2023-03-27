@@ -1,6 +1,10 @@
 package algorithm;
 
+import java.util.LinkedList;
+import java.util.Queue;
 import java.util.Scanner;
+
+import org.w3c.dom.Node;
 
 public class ex1926 {
 	
@@ -58,6 +62,9 @@ public class ex1926 {
 	
 	public static int bfs(int i, int j) {
 		int rs=1;
+		
+//		Queue<Node> q = new LinkedList<>();
+//		q.add(new Node(i,j));
 		
         for(int k=0;k<4;k++) {
         	int nx= i+dx[k];
