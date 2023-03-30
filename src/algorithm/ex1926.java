@@ -11,6 +11,15 @@ public class ex1926 {
 	static int count = 0;
 	static int max = 0;
 	static boolean[][] chk;
+	
+	static class Spot {
+		int x, y;
+
+		public Spot(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -37,16 +46,23 @@ public class ex1926 {
 
 		arr = new int[n][m];
 		chk = new boolean[n][m];
+		
+		for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                arr[i][j] = scanner.nextInt();
+            }
+        }
+
 
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < m; j++) {
 				if (arr[i][j] == 1 && chk[i][j] == false) {
 					chk[i][j] = true;
 					// 전체그림갯수+1
-					count+=1;
+					count += 1;
 					// BFS>그림 크기를 구해주고
 					// 최댓값 갱신
-
+//					bfs(i, j);
 					max = Math.max(max, bfs(i, j));
 
 				}
@@ -60,22 +76,24 @@ public class ex1926 {
 	static int[] dx = new int[] { 1, 0, -1, 0 };
 	static int[] dy = new int[] { 0, 1, 0, -1 };
 
-	public static int bfs(int i, int j) {
-		int rs = 1;
+	public static int bfs(int x, int y) {
 
-		Queue<int[]> q = new LinkedList<>();
-		q.add(new int[] { i, j });
+		int rs = 1; // 현재 칠해진 도화지를 1부터 시작
+
+		Queue<Spot> q = new LinkedList<>();
+		q.add(new Spot(x, y));
 
 		while (!q.isEmpty()) {
-			int[] p = q.poll();
+			Spot p = q.poll();
+
 			for (int k = 0; k < 4; k++) {
-				int nx = p[0] + dx[k];
-				int ny = p[1] + dy[k];
+				int nx = p.x + dx[k];
+				int ny = p.y + dy[k];
 
 				if (nx >= 0 && nx < n && ny >= 0 && ny < m && arr[nx][ny] == 1 && chk[nx][ny] == false) {
-					rs+=1;
+					rs += 1;
 					chk[nx][ny] = true;
-					q.add(new int[] { nx, ny });
+					q.add(new Spot(nx, ny));
 				}
 
 			}
@@ -83,5 +101,7 @@ public class ex1926 {
 
 		return rs;
 	}
+
+	
 
 }
