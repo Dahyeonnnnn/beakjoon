@@ -63,7 +63,7 @@ public class ex1926 {
 					// BFS>그림 크기를 구해주고
 					// 최댓값 갱신
 //					bfs(i, j);
-					max = Math.max(max, bfs(i, j));
+					max = Math.max(max, bfs(i, j));	//함수호출, 리턴값으로 크기
 
 				}
 			}
@@ -76,7 +76,7 @@ public class ex1926 {
 	static int[] dx = new int[] { 1, 0, -1, 0 };
 	static int[] dy = new int[] { 0, 1, 0, -1 };
 
-	public static int bfs(int x, int y) {
+	public static int bfs(int x, int y) {	
 
 		int rs = 1; // 현재 칠해진 도화지를 1부터 시작
 
