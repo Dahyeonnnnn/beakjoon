@@ -31,6 +31,7 @@ public class ex2667 {
 		Scanner scanner = new Scanner(System.in);
 
 		n = scanner.nextInt();
+		scanner.nextLine();
 		
 		result = new ArrayList<Integer>();
 
