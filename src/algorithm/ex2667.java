@@ -55,7 +55,6 @@ public class ex2667 {
 		// 입력 받은 지도를 map 이차원 배열에 저장
        
 		
-
         // 모든 좌표에 대해서 DFS 수행
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
