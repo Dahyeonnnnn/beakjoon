@@ -44,7 +44,7 @@ public class ex15649 {
 
 		}
 		for(int i=1;i<n+1;i++) {
-			if (chk[i]=false) {
+			if (chk[i]==false) {
 				chk[i]=true;
 				arr[num]=i;
 				recur(num+1);
