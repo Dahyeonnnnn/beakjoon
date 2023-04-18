@@ -3,6 +3,9 @@ package algorithm;
 import java.util.Scanner;
 
 public class ex14503 {
+	public static int cnt = 0;
+	static int[] dx = new int[] { 1, 0, -1, 0 };
+	static int[] dy = new int[] { 0, 1, 0, -1 };
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -24,8 +27,13 @@ public class ex14503 {
 		
 		int n = scanner.nextInt();
 		int m = scanner.nextInt();
+		int map[][] = new int[n][m];
 		
-		
+		for (int i = 0; i < n; i++) {
+			for(int j=0;j<m;j++) {
+				map[i][j]=scanner.nextInt();
+			}
+		}
 	}
 
 }
