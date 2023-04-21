@@ -35,5 +35,9 @@ public class ex14503 {
 			}
 		}
 	}
+	
+	 public static void clean(int row, int col, int direction) {
+		 
+	 }
 
 }
