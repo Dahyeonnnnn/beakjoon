@@ -55,7 +55,7 @@ public class ex14503 {
 				if (nr >= 0 && nr < n && nc >= 0 && nc < n && map[nr][nc] == 1) {
 
 					if (map[nr][nc] == 0) {
-						d = d - i;
+						d = (d - i+4)%4;
 						r = nr;
 						c = nc;
 						sw = true;
