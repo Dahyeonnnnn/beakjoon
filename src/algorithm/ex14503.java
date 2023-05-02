@@ -48,14 +48,14 @@ public class ex14503 {
 				cnt += 1;
 			}
 			boolean sw = false;
-			for (int i = 1; i < 5; i++) {
+			for (int i = 0; i < 4; i++) {
 				nr = r + dx[d - i];
 				nc = c + dy[d - i];
 
-				if (nr >= 0 && nr < n && nc >= 0 && nc < n && map[nr][nc] == 1) {
+				if (nr >= 0 && nr < n && nc >= 0 && nc < m) {
 
 					if (map[nr][nc] == 0) {
-						d = (d - i+4)%4;
+						d = (d - i + 4) % 4;
 						r = nr;
 						c = nc;
 						sw = true;
@@ -69,7 +69,7 @@ public class ex14503 {
 				// 뒤쪽 벽이 막혀있는지 확인
 				nr = r - dx[d];
 				nc = c - dy[d];
-				if (nr >= 0 && nr < n && nc >= 0 && nc < n && map[nr][nc] == 1) {
+				if (nr >= 0 && nr < n && nc >= 0 && nc < m) {
 
 					if (map[nr][nc] == 1) {
 						break;
@@ -77,7 +77,7 @@ public class ex14503 {
 						r = nr;
 						c = nc;
 					}
-				}else {
+				} else {
 					break;
 				}
 			}
