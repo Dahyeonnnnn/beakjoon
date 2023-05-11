@@ -30,15 +30,22 @@ public class ex1920 {
 		for (int i = 0; i < n; i++) {
 			nums[i] = scanner.nextInt();
 		}
+		
+		Arrays.sort(nums);
 
 		int m = scanner.nextInt();
 		int[] targetList = new int[m];
 
 		for (int i = 0; i < m; i++) {
 			targetList[i] = scanner.nextInt();
+			
+			search(0,n-1,targetList[i]);
+			
 		}
 		
-		Arrays.sort(nums);
+		
+		
+		
 
 		
 		
